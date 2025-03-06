@@ -1,13 +1,12 @@
 package com.OnlineExamSystem.demo.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-import javax.management.relation.Role;
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.List;
 

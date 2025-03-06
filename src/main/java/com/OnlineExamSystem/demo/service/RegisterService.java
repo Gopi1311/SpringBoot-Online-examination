@@ -20,9 +20,6 @@ public class RegisterService {
 
 
     public Register userSignup(Register register, MultipartFile imageFile) throws IOException {
-
-//        register.setImage(imageFile.getBytes());
-
         if (imageFile != null && !imageFile.isEmpty()) {
             register.setImage(imageFile.getBytes()); // Set image only if present
         } else {

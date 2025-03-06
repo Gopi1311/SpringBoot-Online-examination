@@ -31,9 +31,7 @@ public class TestDetail {
         return "TestDetail{" +
                 "id=" + id +
                 ", testname='" + testname + '\'' +
-//                ", teacher=" + teacher +
                 ", teacherId=" + (teacher != null ? teacher.getId() : null) +
-//                ", tests=" + tests +
                 '}';
     }
 
