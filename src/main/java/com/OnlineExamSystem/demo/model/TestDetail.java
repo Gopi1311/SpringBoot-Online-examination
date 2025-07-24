@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,16 +27,8 @@ public class TestDetail {
     @JoinColumn(name = "teacherid", referencedColumnName = "id")
     private Register teacher;
 
-    @Override
-    public String toString() {
-        return "TestDetail{" +
-                "id=" + id +
-                ", testname='" + testname + '\'' +
-                ", teacherId=" + (teacher != null ? teacher.getId() : null) +
-                '}';
-    }
 
-    @OneToMany(mappedBy = "testDetail", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "testDetail", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnoreProperties("testDetail")
     private List<Test> tests;
 
@@ -70,5 +63,15 @@ public class TestDetail {
 
     public void setTests(List<Test> tests) {
         this.tests = tests;
+    }
+
+    @Override
+    public String toString() {
+        return "TestDetail{" +
+                "id=" + id +
+                ", testname='" + testname + '\'' +
+                ", teacher=" + teacher +
+                ", tests=" + tests +
+                '}';
     }
 }
